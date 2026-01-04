@@ -11,14 +11,8 @@ app.get("/", function (req, res) {
 
         response.on("data", function (data) {
             const weatherData = JSON.parse(data);
-            console.log(weatherData); 
-
-            const object = {
-                name: "Angela",
-                m8: "MKBHD"
-            };
-
-            console.log(JSON.stringify(object));
+            const info = weatherData.weather[0].description;
+            console.log(info);
         });
     });
 
